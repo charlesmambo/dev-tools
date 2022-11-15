@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devs Tools</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <p onclick="changeStyle()">14 devs tools you must know ..Open your Console</p>
+
+   <script>
+
+    const dogs = [{name: 'Lorem', age: 3}, {name: 'Bugs', age: 5 }]
+
+    function changeStyle(){
+        const p = document.querySelector('p')
+        p.style.color = 'red';
+        p.style.fontSize = '30px'
+    }
+
+     // Regular
+     console.log('Hello Charles')
+
+    // Interpolated
+    console.log('Hello i am a %s developer', '😎')
+
+    // Styled
+    console.log('%c learning javascript', 'font-size: 30px; color: red; background: blue')
+
+    // warning!
+    console.warn('Get out now')
+
+    // Error
+    console.error('Something is wrong') 
+
+    // Info
+    console.info('i don`t have jokes')
+
+    // Testing
+    const p = document.querySelector('p')
+    console.assert(p.classList.contains('ouch'), 'Thi is wrong')
+
+    // Viewing DOM Elements
+    console.log(p)
+    console.dir(p)
+
+    // Grouping together
+    dogs.forEach(dog =>{
+        console.groupCollapsed(`${dog.name}`)
+        console.log(`${dog.name} is ${dog.age} years old`)
+        console.log(`${dog.name} is ${dog.age * 5} years old`)
+        console.groupEnd(`${dog.name}`)
+    })
+
+    // counting
+    console.count('Jay')
+    console.count('Jay')
+    console.count('Jay')
+    console.count('Jay')
+    console.count('Nelly')
+    console.count('Nelly')
+    console.count('Nelly')
+    console.count('Nelly')
+    console.count('Jay')
+    console.count('Jay')
+    console.count('Nelly')
+
+    // timing
+      console.time('fetching data') 
+      fetch('https://api.github.com/users/charlesmambo') 
+      .then(data => data.json())
+      .then(data => {
+        console.timeEnd('fetching data')
+        console.log(data)
+      })
+
+    // clearing
+    // console.clear()
+
+   </script>
+</body>
+</html>
